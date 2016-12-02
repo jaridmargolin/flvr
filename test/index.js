@@ -115,7 +115,7 @@ describe('flvr', function () {
       const parsed = parseOutput(output);
 
       assert.isTrue(parsed.msg.includes(`SyntaxError: Unexpected token ;`));
-      assert.isTrue(parsed.loc[0].includes(`@ - syntax.js:`));
+      assert.isTrue(parsed.loc[0].includes(`@ syntax.js:`));
       assert.isTrue(parsed.loc[1].includes(`test/fixtures/syntax.js:`));
       assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+:/)));
       assert.deepEqual(parsed.trace, []);
