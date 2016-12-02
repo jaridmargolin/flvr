@@ -27,9 +27,9 @@ const parseOutput = function (output, filePath) {
 
   return {
     msg: lines[1],
-    loc: lines.slice(3, 5),
-    frame: lines.slice(6, 11),
-    trace: lines.slice(12)
+    frame: lines.slice(3, 8),
+    loc: lines.slice(9, 11),
+    trace: lines.slice(11)
   }
 };
 
@@ -57,11 +57,11 @@ describe('flvr', function () {
       const parsed = parseOutput(output);
 
       assert.isTrue(parsed.msg.includes(`Error: test`));
-      assert.isTrue(parsed.loc[0].includes(`@ throwError index.js:`)
-        && parsed.loc[1].includes(`test/index.js:`));
       assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+:/)));
-      assert.isTrue(parsed.trace[0].includes(`Timeout.err index.js:`)
-        && parsed.trace[1].includes(`test/index.js:`));
+      assert.isTrue(parsed.loc[0].includes(`@ throwError index.js:`));
+      assert.isTrue(parsed.loc[1].includes(`test/index.js:`));
+      assert.isTrue(parsed.trace[0].includes(`Timeout.err index.js:`));
+      assert.isTrue(parsed.trace[1].includes(`test/index.js:`));
     };
 
     // used in order to ensure stack trace results
@@ -88,9 +88,9 @@ describe('flvr', function () {
       const parsed = parseOutput(output);
 
       assert.isTrue(parsed.msg.includes(`Error: test`));
+      assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+:/)));
       assert.isTrue(parsed.loc[0].includes(`@ throwError uncaught.js:`));
       assert.isTrue(parsed.loc[1].includes(`test/fixtures/uncaught.js:`));
-      assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+:/)));
       assert.isTrue(parsed.trace[0].includes(`Timeout.err uncaught.js:`));
       assert.isTrue(parsed.trace[1].includes(`test/fixtures/uncaught.js:`));
     };
@@ -118,7 +118,6 @@ describe('flvr', function () {
       assert.isTrue(parsed.loc[0].includes(`@ syntax.js:`));
       assert.isTrue(parsed.loc[1].includes(`test/fixtures/syntax.js:`));
       assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+:/)));
-      assert.deepEqual(parsed.trace, []);
     };
 
     let output = '';
