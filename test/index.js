@@ -57,7 +57,7 @@ describe('flvr', function () {
       const parsed = parseOutput(output);
 
       assert.isTrue(parsed.msg.includes(`Error: test`));
-      assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+:/)));
+      assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+|/)));
       assert.isTrue(parsed.loc[0].includes(`@ throwError index.js:`));
       assert.isTrue(parsed.loc[1].includes(`test/index.js:`));
       assert.isTrue(parsed.trace[0].includes(`Timeout.err index.js:`));
@@ -88,7 +88,7 @@ describe('flvr', function () {
       const parsed = parseOutput(output);
 
       assert.isTrue(parsed.msg.includes(`Error: test`));
-      assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+:/)));
+      assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+|/)));
       assert.isTrue(parsed.loc[0].includes(`@ throwError uncaught.js:`));
       assert.isTrue(parsed.loc[1].includes(`test/fixtures/uncaught.js:`));
       assert.isTrue(parsed.trace[0].includes(`Timeout.err uncaught.js:`));
@@ -117,7 +117,7 @@ describe('flvr', function () {
       assert.isTrue(parsed.msg.includes(`SyntaxError: Unexpected token ;`));
       assert.isTrue(parsed.loc[0].includes(`@ syntax.js:`));
       assert.isTrue(parsed.loc[1].includes(`test/fixtures/syntax.js:`));
-      assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+:/)));
+      assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+|/)));
     };
 
     let output = '';
