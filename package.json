@@ -15,7 +15,7 @@
   "scripts": {
     "test": "mocha",
     "inspect-test": "inspect _mocha --no-timeouts",
-    "coverage": "istanbul cover ./node_modules/.bin/_mocha",
+    "coverage": "nyc --reporter=lcov --reporter=text npm test",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "main": "lib/index.js",
@@ -34,7 +34,7 @@
     "chai": "^3.5.0",
     "coveralls": "^2.11.15",
     "inspect-process": "^0.3.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.1.2"
+    "mocha": "^3.1.2",
+    "nyc": "^10.0.0"
   }
 }

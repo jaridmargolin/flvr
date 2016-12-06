@@ -17,6 +17,7 @@ results
 npm-debug.log
 sauce_connect.log
 
+/.nyc_output
 /node_modules
 /bower_components
 /coverage
