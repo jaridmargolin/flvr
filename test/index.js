@@ -26,10 +26,10 @@ const parseOutput = function (output, filePath) {
   const lines = stripAnsi(util.format(output)).split('\n');
 
   return {
-    msg: lines[1],
-    frame: lines.slice(3, 8),
-    loc: lines.slice(9, 11),
-    trace: lines.slice(11)
+    msg: lines[0],
+    frame: lines.slice(2, 7),
+    loc: lines.slice(8, 10),
+    trace: lines.slice(10)
   }
 };
 
@@ -68,8 +68,7 @@ describe('flvr', function () {
     setTimeout(() => {
       try {
         throwError();
-      }
-      catch (err) {
+      } catch (err) {
         assertOutput(err);
       }
       
