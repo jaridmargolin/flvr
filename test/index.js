@@ -60,7 +60,7 @@ describe('flvr', function () {
       assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+|/)));
       assert.isTrue(parsed.loc[0].includes(`@ throwError index.js:`));
       assert.isTrue(parsed.loc[1].includes(`test/index.js:`));
-      assert.isTrue(parsed.trace[0].includes(`Timeout.err index.js:`));
+      assert.isTrue(parsed.trace[0].includes(`err index.js:`));
       assert.isTrue(parsed.trace[1].includes(`test/index.js:`));
     };
 
@@ -90,7 +90,7 @@ describe('flvr', function () {
       assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+|/)));
       assert.isTrue(parsed.loc[0].includes(`@ throwError uncaught.js:`));
       assert.isTrue(parsed.loc[1].includes(`test/fixtures/uncaught.js:`));
-      assert.isTrue(parsed.trace[0].includes(`Timeout.err uncaught.js:`));
+      assert.isTrue(parsed.trace[0].includes(`err uncaught.js:`));
       assert.isTrue(parsed.trace[1].includes(`test/fixtures/uncaught.js:`));
     };
 
