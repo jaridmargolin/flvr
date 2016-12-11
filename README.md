@@ -4,11 +4,12 @@
 
 > Add some flavor to your errors.
 
+<img src="https://cldup.com/nxLL4-iB71.gif" style="max-width: 100%">
 
 ### Example Usage
 
 ```
-node --require flvr index.js
+node -r flvr index.js
 ```
 
 
