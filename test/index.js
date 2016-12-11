@@ -128,4 +128,30 @@ describe('flvr', function () {
     });
   });
 
+  it('Should load filter plugins', function (done) {
+    const ogCwd = process.cwd();
+    process.chdir('./test/fixtures');
+    const proc = spawn('node', [
+      '--require',
+      '../../lib/index.js',
+      'uncaught.js'
+    ]);
+
+    const assertOutput = function (output) {
+      const parsed = parseOutput(output);
+
+      assert.equal(parsed.trace.length, 1);
+    };
+
+    let output = '';
+    proc.stderr.on('data', (data) => output += data.toString());
+
+    proc.on('exit', function () {
+      assertOutput(output);
+
+      process.chdir(ogCwd);
+      done();
+    });
+  });
+
 });

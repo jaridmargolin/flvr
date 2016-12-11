@@ -1,0 +1,7 @@
+{
+  "name": "fixture",
+  "version": "0.0.1",
+  "dependencies": {
+    "flvr-filter-test": "^0.0.1"
+  }
+}
