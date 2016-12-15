@@ -13,7 +13,7 @@
     "url": "https://github.com/jaridmargolin/flvr/issues"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "standard && mocha",
     "inspect-test": "inspect _mocha --no-timeouts",
     "coverage": "nyc --reporter=lcov --reporter=text npm test",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
@@ -38,9 +38,12 @@
     "coveralls": "^2.11.15",
     "inspect-process": "^0.3.0",
     "mocha": "^3.1.2",
-    "nyc": "^10.0.0"
+    "nyc": "^10.0.0",
+    "standard": "^8.6.0"
   },
   "standard": {
-    "ignore": ["test/fixtures/syntax.js"]
+    "ignore": [
+      "test/fixtures/syntax.js"
+    ]
   }
 }
