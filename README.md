@@ -1,10 +1,19 @@
-# flvr
-
-[![Build Status](https://travis-ci.org/jaridmargolin/flvr.svg?branch=master)](https://travis-ci.org/jaridmargolin/flvr) [![Coverage Status](https://coveralls.io/repos/github/jaridmargolin/flvr/badge.svg?branch=master)](https://coveralls.io/github/jaridmargolin/flvr?branch=master) [![NPM flvr package](https://img.shields.io/npm/v/flvr.svg)](https://npmjs.org/package/flvr)
-
-> Add some flavor to your errors.
-
-<img src="https://cldup.com/nxLL4-iB71.gif" style="max-width: 100%">
+<h1 align="center">flvr</h1>
+<div align="center">
+  <p>Add some flavor to your errors.</p>
+  <div>
+  <a href="https://travis-ci.org/jaridmargolin/flvr"><img src="https://travis-ci.org/jaridmargolin/flvr.svg?branch=master" alt="Build Status"></a>
+  <a href="https://coveralls.io/github/jaridmargolin/flvr?branch=master"><img src="https://coveralls.io/repos/github/jaridmargolin/flvr/badge.svg?branch=master" alt="Coverage Status"></a>
+  <a href="http://standardjs.com/"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
+  </div>
+  <div>
+  <a href="https://npmjs.org/package/flvr"><img src="https://img.shields.io/npm/v/flvr.svg" alt="NPM flvr package"></a>
+  <a href="https://david-dm.org/jaridmargolin/flvr"><img src="https://david-dm.org/jaridmargolin/flvr.svg" alt="Dependency Status"></a>
+  <a href="https://david-dm.org/jaridmargolin/flvr#info=devDependencies"><img src="https://david-dm.org/jaridmargolin/flvr/dev-status.svg" alt="devDependency Status"></a>
+  </div>
+  <img src="https://cldup.com/nxLL4-iB71.gif" style="max-width: 100%">
+</div>
+<br>
 
 ### Example Usage
 
