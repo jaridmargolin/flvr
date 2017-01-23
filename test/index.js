@@ -125,6 +125,31 @@ describe('flvr', function () {
     })
   })
 
+  it('Should format syntax error loaded at runtime after modifying stack fn', function (done) {
+    const proc = spawn('node', [
+      '--require',
+      './lib/index.js',
+      'test/fixtures/runtime-syntax.js'
+    ])
+
+    const assertOutput = function (output) {
+      const parsed = parseOutput(output)
+
+      assert.isTrue(parsed.msg.includes(`SyntaxError: Unexpected token ;`))
+      assert.isTrue(parsed.loc[0].includes(`@ syntax.js:`))
+      assert.isTrue(parsed.loc[1].includes(`test/fixtures/syntax.js:`))
+      assert.isTrue(_.every(parsed.frame, (line) => line.match(/^.+|/)))
+    }
+
+    let output = ''
+    proc.stderr.on('data', (data) => (output += data.toString()))
+
+    proc.on('exit', function () {
+      assertOutput(output)
+      done()
+    })
+  })
+
   it('Should load filter plugins', function (done) {
     const ogCwd = process.cwd()
     process.chdir('./test/fixtures')
