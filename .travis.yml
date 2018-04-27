@@ -4,6 +4,7 @@ dist: trusty
 language: node_js
 node_js:
 - 6.5.0
+- 10
 
 script: npm run coverage
 
