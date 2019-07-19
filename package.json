@@ -29,7 +29,7 @@
     "indent-string": "^3.0.0",
     "load-plugins": "^2.1.1",
     "lodash": "^4.15.0",
-    "stack-chain": "^1.3.7",
+    "stack-chain": "^2.0.0",
     "stack-utils": "^1.0.0",
     "strip-ansi": "^5.0.0"
   },
