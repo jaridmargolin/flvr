@@ -25,7 +25,7 @@
   "dependencies": {
     "chalk": "^2.0.0",
     "codeframe": "0.0.1",
-    "figures": "^2.0.0",
+    "figures": "^3.1.0",
     "indent-string": "^3.0.0",
     "load-plugins": "^2.1.1",
     "lodash": "^4.15.0",
