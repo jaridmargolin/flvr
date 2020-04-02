@@ -23,7 +23,7 @@
     "flvr": "lib/index.js"
   },
   "dependencies": {
-    "chalk": "^2.0.0",
+    "chalk": "^4.0.0",
     "codeframe": "0.0.1",
     "figures": "^2.0.0",
     "indent-string": "^3.0.0",
